@@ -1,0 +1,19 @@
+body {
+    background-color: black;
+    color: white;
+    font: 1rem Inconsolata, monospace;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: white;
+    font: 1rem Inconsolata, monospace;
+    cursor: pointer;
+    padding: 0;
+}
