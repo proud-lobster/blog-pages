@@ -1,4 +1,4 @@
-import {marked} from "./marked.esm.js";
+import { marked } from "./marked.esm.js";
 
 var articles = [];
 var currentArticleIndex = 0;
@@ -16,8 +16,7 @@ function loadArticle(i) {
     currentArticleIndex = i;
     const articleUrl = articles[currentArticleIndex].download_url;
     document.getElementById("article").innerHTML = "<div class='loading'>Articles are loading...</div>";
-    fetch(articleUrl)
-        .then(r => r.text)
+    Promise.resolve(fetch(articleUrl).then(r => r.text()))
         .then(t => marked.parse(t))
         .then(m => document.getElementById("article").innerHTML = m)
         .then(m => updateNavigation())
