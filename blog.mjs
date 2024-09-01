@@ -4,7 +4,7 @@ var articles = [];
 var currentArticleIndex = 0;
 
 function failureHandler(error) {
-
+    console.log(error);
 }
 
 function updateNavigation() {
