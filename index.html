@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Blog the Wumpus</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is the official blog for Hunt the Wumpus Online">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <h1>Blog the Wumpus</h1>
+    </header>
+    <nav>
+        <div>
+            <button type="button" id="prev-article" hidden>Previous Article</button>
+        </div>
+        <div>
+            <button type="button" id="next-article" hidden>Next Article</button>
+        </div>
+    </nav>
+    <article id="article">
+        <div class="loading">Articles are loading...</div>
+    </article>
+    <script type="module">
+        import loadBlog from "./blog.mjs";
+        const params = new URLSearchParams(window.location.search);
+        loadBlog(params.get("branch"));
+    </script>
+</body>
+
+</html>
