@@ -1,4 +1,4 @@
-import marked from "./marked.esm.js";
+import {marked} from "./marked.esm.js";
 
 var articles = [];
 var currentArticleIndex = 0;
