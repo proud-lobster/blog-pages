@@ -15,22 +15,19 @@
     </header>
     <nav>
         <div>
-            <button type="button">Previous Article</button>
+            <button type="button" id="prev-article" hidden>Previous Article</button>
         </div>
         <div>
-            <button type="button">Next Article</button>
+            <button type="button" id="next-article" hidden>Next Article</button>
         </div>
     </nav>
-    <article>
-        <h2></h2>
-        <div>
-            <time></time>
-        </div>
-        <div class="body">Articles are loading...</div>
+    <article id="article">
+        <div class="loading">Articles are loading...</div>
     </article>
     <script type="module">
         import loadBlog from "./blog.mjs";
-        loadBlog();
+        const params = new URLSearchParams(window.location.search);
+        loadBlog(params.get("branch"));
     </script>
 </body>
 
